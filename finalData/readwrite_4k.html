@@ -1,0 +1,142 @@
+<html>
+      <head>
+        <!--Load the AJAX API-->
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+
+          // Load the Visualization API and the piechart package.
+          google.load('visualization', '1.0', {'packages':['corechart']});
+
+          // Set a callback to run when the Google Visualization API is loaded.
+          google.setOnLoadCallback(drawChart);
+
+          // Callback that creates and populates a data table,
+          // instantiates the pie chart, passes in the data and
+          // draws it.
+          function drawChart() {
+
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Backend');    
+            data.addColumn('number', 'MB/sec');
+data.addRows([['aufs', 22515], ['devicemapper', 18912], ['vfs', 20086],['overlay', 19901]]);
+            // Create the data table.
+            var data1 = new google.visualization.DataTable();
+            data1.addColumn('string', 'Backend');
+            data1.addColumn('number', 'MB/sec');
+data1.addRows([['aufs', 22465], ['devicemapper', 18869], ['vfs', 20040],['overlay', 19857]]);
+
+            var data2 = new google.visualization.DataTable();
+            data2.addColumn('string', 'Backend');
+            data2.addColumn('number', 'IOPS count');	
+data2.addRows([['aufs', 5628], ['devicemapper', 4727], ['vfs',5021],['overlay', 4975]]);
+
+ 	    var data3 = new google.visualization.DataTable();
+            data3.addColumn('string', 'Backend');
+            data3.addColumn('number', 'IOPS count');	
+data3.addRows([['aufs', 5616], ['devicemapper', 4717], ['vfs', 5010],['overlay', 4964]]);
+
+ 	    var data4 = new google.visualization.DataTable();
+            data4.addColumn('string', 'Backend');
+            data4.addColumn('number', 'Total Time Took');	
+data4.addRows([['aufs', 34968], ['devicemapper', 41631], ['vfs', 39198],['overlay', 39561]]);
+
+ 	    var data5 = new google.visualization.DataTable();
+            data5.addColumn('string', 'Backend');
+            data5.addColumn('number', 'Total Time Took');	
+data5.addRows([['aufs', 34968], ['devicemapper', 41631], ['vfs', 39198],['overlay', 39561]]);
+
+ 	    var data6 = new google.visualization.DataTable();
+            data6.addColumn('string', 'Backend');
+            data6.addColumn('number', 'Slat Avg time');	
+data6.addRows([['aufs', 352.17], ['devicemapper', 1003.57], ['vfs', 421.24],['overlay', 513.04]]);
+
+ 	    var data7 = new google.visualization.DataTable();
+            data7.addColumn('string', 'Backend');
+            data7.addColumn('number', 'Slat Avg time');	
+data7.addRows([['aufs', 479.25], ['devicemapper', 263.37], ['vfs', 764.85],['overlay', 669.58]]);
+
+ 	    var data8 = new google.visualization.DataTable();
+            data8.addColumn('string', 'Backend');
+            data8.addColumn('number', 'Clat Avg time');	
+data8.addRows([['aufs', 0.41], ['devicemapper',  0.30], ['vfs', 0.30],['overlay', 0.29]]);
+
+ 	    var data9 = new google.visualization.DataTable();
+            data9.addColumn('string', 'Backend');
+            data9.addColumn('number', 'Clat Avg time');	
+data9.addRows([['aufs', 0.41], ['devicemapper',  0.31], ['vfs', 0.32],['overlay', 0.31]]);
+            // Set chart options
+            var options = {'title':'Read (3) Data Transfer rate in various backend',
+                           'width':400,
+                           'height':300};
+           var options1 = {'title':'Write (1) Data Transfer rate in various backend',
+                           'width':400,
+                           'height':300};
+            // Set chart options
+            var options2 = {'title':'Read (3) IOPS count in various backend',
+                           'width':400,
+                           'height':300};
+            var options3 = {'title':'Write (1) IOPS count in various backend',
+                           'width':400,
+                           'height':300};
+
+            // Set chart options
+            var options4 = {'title':'Read (3) Operation Run time in various backend',
+                           'width':400,
+                           'height':300};
+            var options5 = {'title':'Write (1) Operation Run time in various backend',
+                           'width':400,
+                           'height':300};
+            var options6 = {'title':'Read (3) SLAT Time in various backend',
+                           'width':400,
+                           'height':300};
+            var options7 = {'title':'Write (1) SLAT Time in various backend',
+                           'width':400,
+                           'height':300};
+            var options8 = {'title':'Read (3) CLAT Time in various backend',
+                           'width':400,
+                           'height':300};
+            var options9 = {'title':'Write (1) CLAT Time in various backend',
+                           'width':400,
+                           'height':300};
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+            var chart1 = new google.visualization.BarChart(document.getElementById('chart_div1'));
+	    chart1.draw(data1, options1);
+            var chart2 = new google.visualization.BarChart(document.getElementById('chart_div2'));
+            chart2.draw(data2, options2);
+            var chart3 = new google.visualization.BarChart(document.getElementById('chart_div3'));
+            chart3.draw(data3, options3);
+            var chart4 = new google.visualization.BarChart(document.getElementById('chart_div4'));
+            chart4.draw(data4, options4);
+            var chart5 = new google.visualization.BarChart(document.getElementById('chart_div5'));
+            chart5.draw(data5, options5);
+            var chart6 = new google.visualization.BarChart(document.getElementById('chart_div6'));
+            chart6.draw(data6, options6);
+            var chart7 = new google.visualization.BarChart(document.getElementById('chart_div7'));
+            chart7.draw(data7, options7);
+            var chart8 = new google.visualization.BarChart(document.getElementById('chart_div8'));
+            chart8.draw(data8, options8);
+            var chart9 = new google.visualization.BarChart(document.getElementById('chart_div9'));
+            chart9.draw(data9, options9);
+          }
+        </script>
+      </head>
+
+      <body>
+        <!--Divs that will hold the charts-->
+        <div id="chart_div"></div>
+	<div id="chart_div1"></div>
+        <div id="chart_div2"></div>
+        <div id="chart_div3"></div>
+        <div id="chart_div4"></div>
+        <div id="chart_div5"></div>
+        <div id="chart_div6"></div>
+        <div id="chart_div7"></div>
+        <div id="chart_div8"></div>
+        <div id="chart_div9"></div>
+      </body>
+    </html>
+

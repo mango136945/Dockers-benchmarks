@@ -1,0 +1,12 @@
+./backend.sh read.log read 256M 4k
+./backend.sh write.log write 256M 4k
+./backend.sh readwrite.log readwrite 256M 4k
+./backend.sh read.log read 256M 32k
+./backend.sh write.log write 256M 32k
+./backend.sh readwrite.log readwrite 256M 32k
+./backend.sh read.log randread 256M 4k
+./backend.sh read.log randwrite 256M 4k
+./backend.sh readwrite.log randrw 256M 4k
+./backend.sh read.log randread 256M 32k
+./backend.sh write.log randwrite 256M 32k
+./backend.sh write.log randrw 256M 32k

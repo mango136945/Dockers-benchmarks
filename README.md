@@ -1,4 +1,4 @@
-# Dockers-benchmarks
+# Dockers backends-benchmarks
 
 As part of our class project, we have worked on benchmarking different Docker storage backends on some criteria.
 One of the essential and integral part of the Docker model is the optimum use of images and containers based on those images.
